@@ -1,19 +1,5 @@
-[package]
-name = "poseidon-preimage"
-version = "0.1.0"
-edition = "2021"
+[workspace]
 
-[lib]
-crate-type = ["cdylib", "lib"]
-
-[dependencies]
-near-sdk = "4.0.0"
-bolt-rs = { git = "https://github.com/Electron-Labs/electron-rs" }
-
-[profile.release]
-codegen-units = 1
-opt-level = "z"
-lto = true
-debug = false
-panic = "abort"
-overflow-checks = true
+members = [
+    "contract"
+]
