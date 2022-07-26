@@ -1,4 +1,4 @@
-use bolt_rs::verifier::near::*;
+use electron_rs::verifier::near::*;
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
 use near_sdk::{near_bindgen, PanicOnDefault};
 
