@@ -2,3 +2,4 @@ contract/target
 /neardev
 node_modules/
 Cargo.lock
+res/taus
