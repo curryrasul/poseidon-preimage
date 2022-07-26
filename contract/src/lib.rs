@@ -6,20 +6,20 @@ use near_sdk::{near_bindgen, PanicOnDefault};
 #[derive(BorshSerialize, BorshDeserialize, PanicOnDefault)]
 pub struct Contract {
     pvk: PreparedVerifyingKey,
-    preimage: String,
+    image: String,
 }
 
 #[near_bindgen]
 impl Contract {
     #[init]
-    pub fn new(vk: String, preimage: String) -> Self {
+    pub fn new(vk: String, image: String) -> Self {
         let vk = parse_verification_key(vk).unwrap();
         let pvk = get_prepared_verifying_key(vk);
 
-        Self { pvk, preimage }
+        Self { pvk, image }
     }
 
     pub fn verify(&self, proof: String) -> bool {
-        verify_proof(self.pvk.clone(), proof, self.preimage.clone()).unwrap()
+        verify_proof(self.pvk.clone(), proof, self.image.clone()).unwrap()
     }
 }
