@@ -3,3 +3,4 @@ contract/target
 node_modules/
 Cargo.lock
 res/taus
+/target
